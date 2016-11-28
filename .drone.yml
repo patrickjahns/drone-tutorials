@@ -2,14 +2,10 @@ workspace:
   path: src
 
 pipeline:
-  install:
-    image: golang:1.6
-    commands:
-      - git clone https://github.com/drone/drone-hugo-theme.git themes/drone-hugo-theme
-
   generate:
     image: webhippie/hugo:latest
     commands:
+      - git clone https://github.com/drone/drone-hugo-theme.git themes/drone-hugo-theme
       - hugo
 
   upload:

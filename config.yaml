@@ -45,10 +45,12 @@ languages:
     menu:
       main:
         - name: "Dokumentation"
+          url: "http://readme.drone.io/0.5"
         - name: "Tutorials"
-        - name: "Fragen"
-        - name: "Plugins"
-        - name: "Projekte"
+          url: "/de/"
+        # - name: "Fragen"
+        # - name: "Plugins"
+        # - name: "Projekte"
   fr:
     weight: 3
     menu:

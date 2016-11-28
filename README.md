@@ -14,7 +14,7 @@ brew install hugo
 Install the Hugo theme:
 
 ```nohighlight
-git clone https://github.com/drone/drone-hugo-theme.git themes
+git clone https://github.com/drone/drone-hugo-theme.git themes/drone-hugo-theme
 ```
 
 Start the local server at localhost:1313/tutorials

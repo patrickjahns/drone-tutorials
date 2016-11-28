@@ -83,10 +83,12 @@ languages:
     menu:
       main:
         - name: "文档"
+          url: "http://readme.drone.io/0.5"
         - name: "教程"
-        - name: "问题"
-        - name: "插件"
-        - name: "项目"
+          url: "/zh/"
+        # - name: "问题"
+        # - name: "插件"
+        # - name: "项目"
   ja:
     weight: 7
     menu:

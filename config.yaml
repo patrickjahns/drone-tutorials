@@ -40,19 +40,8 @@ enableMissingTranslationPlaceholders: true
 languages:
   en:
     weight: 1
-  de:
-    weight: 2
-    menu:
-      main:
-        - name: "Dokumentation"
-          url: "http://readme.drone.io/0.5"
-        - name: "Tutorials"
-          url: "/de/"
-        # - name: "Fragen"
-        # - name: "Plugins"
-        # - name: "Projekte"
   fr:
-    weight: 3
+    weight: 2
     menu:
       main:
         - name: "Documentation"
@@ -61,7 +50,7 @@ languages:
         - name: "Plugins"
         - name: "Projets"
   es:
-    weight: 4
+    weight: 3
     menu:
       main:
         - name: "Documentación"
@@ -70,7 +59,7 @@ languages:
         - name: "Plugins"
         - name: "Proyectos"
   pt:
-    weight: 5
+    weight: 4
     menu:
       main:
         - name: "Documentação"
@@ -79,18 +68,20 @@ languages:
         - name: "Plugins"
         - name: "Projetos"
   zh:
-    weight: 6
+    weight: 5
     menu:
       main:
         - name: "文档"
           url: "http://readme.drone.io/0.5"
+          weight: -900
         - name: "教程"
           url: "/zh/"
+          weight: -800
         # - name: "问题"
         # - name: "插件"
         # - name: "项目"
   ja:
-    weight: 7
+    weight: 6
     menu:
       main:
         - name: "ドキュメント"
@@ -99,16 +90,20 @@ languages:
         - name: "プラグイン"
         - name: "プロジェクト"
   ru:
-    weight: 8
+    weight: 7
     menu:
       main:
         - name: "Документация"
+          url: "http://readme.drone.io/0.5"
+          weight: -900
         - name: "Учебники"
-        - name: "Вопросы"
-        - name: "Плагины"
-        - name: "Проекты"
+          url: "/ru/"
+          weight: -800
+        # - name: "Вопросы"
+        # - name: "Плагины"
+        # - name: "Проекты"
   hu:
-    weight: 9
+    weight: 8
     menu:
       main:
         - name: "Dokumentációt"

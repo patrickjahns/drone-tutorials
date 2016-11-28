@@ -2,10 +2,14 @@ workspace:
   path: src
 
 pipeline:
-  build:
-    image: webhippie/hugo:latest
+  install:
+    image: golang:1.7.3-alpine
     commands:
       - git clone https://github.com/drone/drone-hugo-theme.git themes/drone-hugo-theme
+
+  generate:
+    image: webhippie/hugo:latest
+    commands:
       - hugo
 
   upload:

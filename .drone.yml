@@ -1,0 +1,21 @@
+workspace:
+  path: src
+
+pipeline:
+  build:
+    image: webhippie/hugo:latest
+    commands:
+      - hugo
+
+  upload:
+    image: plugins/s3-sync:1.1
+    access: public-read
+    region: us-east-1
+    bucket: readme.drone.io
+    source: public/
+    target: /tutorials
+    delete: false
+    content_type:
+      ".svg": image/svg+xml
+    when:
+      event: push

@@ -1,0 +1,114 @@
+baseurl: http://readme.drone.io/tutorials
+languageCode: en-us
+title: Tutorials | Drone
+theme: drone-hugo-theme
+
+taxonomies:
+  tag: tags
+  label: labels
+
+params:
+  header: Tutorials
+  action:  Write a Tutorial
+  caption: |
+    Follow along with one of our continuous
+    integration & continuous delivery tutorials.
+
+menu:
+  main:
+    - name: "Documentation"
+      url: "http://readme.drone.io/0.5"
+      weight: -900
+    - name: "Tutorials"
+      url: "/"
+      weight: -700
+      pre: selected
+    # - name: "Questions"
+    #   url: "http://plugins.drone.io"
+    #   weight: -500
+    # - name: "Plugins"
+    #   url: "http://plugins.drone.io"
+    #   weight: -300
+    # - name: "Projects"
+    #   url: "http://plugins.drone.io"
+    #   weight: -100
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+enableMissingTranslationPlaceholders: true
+
+languages:
+  en:
+    weight: 1
+  de:
+    weight: 2
+    menu:
+      main:
+        - name: "Dokumentation"
+        - name: "Tutorials"
+        - name: "Fragen"
+        - name: "Plugins"
+        - name: "Projekte"
+  fr:
+    weight: 3
+    menu:
+      main:
+        - name: "Documentation"
+        - name: "Tutoriels"
+        - name: "Questions"
+        - name: "Plugins"
+        - name: "Projets"
+  es:
+    weight: 4
+    menu:
+      main:
+        - name: "Documentación"
+        - name: "Tutoriales"
+        - name: "Preguntas"
+        - name: "Plugins"
+        - name: "Proyectos"
+  pt:
+    weight: 5
+    menu:
+      main:
+        - name: "Documentação"
+        - name: "Tutoriais"
+        - name: "Perguntas"
+        - name: "Plugins"
+        - name: "Projetos"
+  zh:
+    weight: 6
+    menu:
+      main:
+        - name: "文档"
+        - name: "教程"
+        - name: "问题"
+        - name: "插件"
+        - name: "项目"
+  ja:
+    weight: 7
+    menu:
+      main:
+        - name: "ドキュメント"
+        - name: "チュートリアル"
+        - name: "質問"
+        - name: "プラグイン"
+        - name: "プロジェクト"
+  ru:
+    weight: 8
+    menu:
+      main:
+        - name: "Документация"
+        - name: "Учебники"
+        - name: "Вопросы"
+        - name: "Плагины"
+        - name: "Проекты"
+  hu:
+    weight: 9
+    menu:
+      main:
+        - name: "Dokumentációt"
+        - name: "Oktatóanyagok"
+        - name: "Kérdéseket"
+        - name: "Dugó"
+        - name: "Projektek"

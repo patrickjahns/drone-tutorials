@@ -89,8 +89,12 @@ languages:
         - name: "问题"
           url: "http://readme.drone.io/questions/zh-cn/"
           weight: -700
-        # - name: "插件"
-        # - name: "项目"
+        - name: "插件"
+          url: "http://plugins.drone.io"
+          weight: -600
+        - name: "项目"
+          url: "https://github.com/drone/drone"
+          weight: -500
   zh-tw:
     weight: 6
     menu:
@@ -104,8 +108,12 @@ languages:
         - name: "問題"
           url: "http://readme.drone.io/questions/zh-tw/"
           weight: -700
-        # - name: "外掛"
-        # - name: "專案"
+        - name: "外掛"
+          url: "http://plugins.drone.io"
+          weight: -600
+        - name: "專案"
+          url: "https://github.com/drone/drone"
+          weight: -500
   ja:
     weight: 7
     menu:

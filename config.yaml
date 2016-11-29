@@ -76,7 +76,7 @@ languages:
         - name: "Perguntas"
         - name: "Plugins"
         - name: "Projetos"
-  zh:
+  zh-cn:
     weight: 5
     menu:
       main:
@@ -84,15 +84,30 @@ languages:
           url: "http://readme.drone.io/0.5"
           weight: -900
         - name: "教程"
-          url: "/zh/"
+          url: "/zh-cn/"
           weight: -800
         - name: "问题"
-          url: "http://readme.drone.io/questions/zh/"
+          url: "http://readme.drone.io/questions/zh-cn/"
           weight: -700
         # - name: "插件"
         # - name: "项目"
-  ja:
+  zh-tw:
     weight: 6
+    menu:
+      main:
+        - name: "文件"
+          url: "http://readme.drone.io/0.5"
+          weight: -900
+        - name: "教學"
+          url: "/zh-tw/"
+          weight: -800
+        - name: "問題"
+          url: "http://readme.drone.io/questions/zh-tw/"
+          weight: -700
+        # - name: "外掛"
+        # - name: "專案"
+  ja:
+    weight: 7
     menu:
       main:
         - name: "ドキュメント"
@@ -101,7 +116,7 @@ languages:
         - name: "プラグイン"
         - name: "プロジェクト"
   ru:
-    weight: 7
+    weight: 8
     menu:
       main:
         - name: "Документация"
@@ -116,7 +131,7 @@ languages:
         # - name: "Плагины"
         # - name: "Проекты"
   hu:
-    weight: 8
+    weight: 9
     menu:
       main:
         - name: "Dokumentációt"

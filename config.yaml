@@ -25,9 +25,9 @@ menu:
       url: "/"
       weight: -700
       pre: selected
-    # - name: "Questions"
-    #   url: "http://plugins.drone.io"
-    #   weight: -500
+    - name: "Questions"
+      url: "http://readme.drone.io/questions"
+      weight: -500
     # - name: "Plugins"
     #   url: "http://plugins.drone.io"
     #   weight: -300
@@ -86,7 +86,9 @@ languages:
         - name: "教程"
           url: "/zh/"
           weight: -800
-        # - name: "问题"
+        - name: "问题"
+          url: "http://readme.drone.io/questions/zh/"
+          weight: -700
         # - name: "插件"
         # - name: "项目"
   ja:
@@ -108,7 +110,9 @@ languages:
         - name: "Учебники"
           url: "/ru/"
           weight: -800
-        # - name: "Вопросы"
+        - name: "Вопросы"
+          url: "http://readme.drone.io/questions/ru/"
+          weight: -700
         # - name: "Плагины"
         # - name: "Проекты"
   hu:

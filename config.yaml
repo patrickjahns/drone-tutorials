@@ -8,11 +8,13 @@ taxonomies:
   label: labels
 
 params:
-  header: Tutorials
-  action:  Write a Tutorial
-  caption: |
+  heading: Tutorials
+  tagline: >
     Follow along with one of our continuous
     integration & continuous delivery tutorials.
+  actions:
+    create: Write a Tutorial
+    search: Search Tutorials
 
 menu:
   main:
@@ -42,6 +44,13 @@ languages:
     weight: 1
   fr:
     weight: 2
+    heading: Tutoriels
+    tagline: >
+      Follow along with one of our continuous
+      integration & continuous delivery tutorials.
+    actions:
+      create: Faire un Tutoriel
+      search: Chercher les Tutoriels
     menu:
       main:
         - name: "Documentation"

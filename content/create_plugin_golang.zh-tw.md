@@ -86,8 +86,6 @@ func main() {
 GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o webhook
 ```
 
-Create a Dockerfile that adds your compiled binary to the image, and configures the image to run your binary as the main entrypoint.
-
 建立 Dockerfile 加入您編譯過的 binary，並且設定 Entrypoint 讓映像檔去執行您的 binary。 
 
 ```dockerfile
@@ -96,8 +94,6 @@ ADD webhook /bin/
 RUN apk -Uuv add ca-certificates
 ENTRYPOINT /bin/webhook
 ```
-
-Build and publish your plugin to the Docker registry. Once published your plugin can be shared with the broader Drone community.
 
 編譯並且上傳映像檔到 Docker registry，一旦完成後，就可以分享到 Drone 社群內。
 

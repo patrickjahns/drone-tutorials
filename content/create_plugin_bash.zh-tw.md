@@ -1,12 +1,12 @@
 ---
 date: 2016-01-01T00:00:00+00:00
-title: Creating custom plugins with Bash
+title: 用 Bash 語言建立 Drone 外掛
 tags: [ "bash", "plugins" ]
 labels: [ "tutorial" ]
 author: appleboy
 ---
 
-This provides a brief tutorial for creating a Drone webhook plugin, using simple shell scripting, to make an http requests during the build pipeline. The below example demonstrates how we might configure a webhook plugin in the Yaml file:
+本文會教大家如何使用簡單的 Shell Script 建立 Drone webhook 外掛，並在 Drone 編譯過程中建立 http 連線，底下範例是在 Yaml 檔案內設定 webhook 外掛:
 
 ```yaml
 pipeline:
@@ -18,7 +18,7 @@ pipeline:
       hello world
 ```
 
-Create a simple shell script that invokes curl using the Yaml configuration parameters, which are passed to the script as environment variables in uppercase and prefixed with `PLUGIN_`.
+建立簡單的 Shell Script 來執行 curl 指令，並且使用 Yaml 設定來當作環境變數，其中變數名稱必須為大寫且前置字串為 `PLUGIN_` 開頭。
 
 ```sh
 #!/bin/sh
@@ -29,7 +29,7 @@ curl \
   ${PLUGIN_URL}
 ```
 
-Allow your users to optionally define sensitive configuration parameters external to the Yaml file, using the Drone secret store. Secrets defined using the secret store use arbitrary names chosen by the plugin author, and are not prefixed with `PLUGIN_`
+除了 Yaml 設定外，Drone 也提供加密儲存空間讓使用者自行定義變數，外掛開發者可以透過 Drone Secret 指令來設定私有變數，這些變數名稱不需要使用 `PLUGIN_` 當開頭。
 
 ```diff
 #!/bin/sh
@@ -43,7 +43,7 @@ curl \
   ${PLUGIN_URL}
 ```
 
-Create a Dockerfile that adds your shell script to the image, and configures the image to execute your shell script as the main entrypoint.
+建立 Dockerfile 加入 Shell Script 檔案，並且將執行指令寫在 Entrypoint。
 
 ```dockerfile
 FROM alpine
@@ -53,14 +53,14 @@ RUN apk -Uuv add curl ca-certificates
 ENTRYPOINT /bin/script.sh
 ```
 
-Build and publish your plugin to the Docker registry. Once published your plugin can be shared with the broader Drone community.
+編譯並且上傳映像檔到 Docker registry，一旦完成後，就可以分享到 Drone 社群內。
 
 ```nohighlight
 docker build -t foo/webhook .
 docker push foo/webhook
 ```
 
-Execute your plugin locally from the command line to verify it is working:
+在本機端執行您的外掛來確保映像檔是可以正常運作：
 
 ```nohighlight
 docker run --rm \

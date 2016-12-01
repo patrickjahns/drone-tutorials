@@ -1,6 +1,6 @@
 ---
 date: 2016-01-01T00:00:00+00:00
-title: Creating custom plugins with Bash
+title: 用 Bash 語言建立 Drone 外掛
 tags: [ "bash", "plugins" ]
 labels: [ "tutorial" ]
 author: appleboy

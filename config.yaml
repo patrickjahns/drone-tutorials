@@ -39,7 +39,7 @@ enableMissingTranslationPlaceholders: true
 languages:
   en:
     weight: 1
-    languageName: Engline
+    languageName: English
   fr:
     weight: 2
     languageName: Français

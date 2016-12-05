@@ -28,12 +28,9 @@ menu:
     - name: "Questions"
       url: "http://readme.drone.io/questions"
       weight: -500
-    # - name: "Plugins"
-    #   url: "http://plugins.drone.io"
-    #   weight: -300
-    # - name: "Projects"
-    #   url: "http://plugins.drone.io"
-    #   weight: -100
+    - name: "Plugins"
+      url: "http://readme.drone.io/0.5/plugins"
+      weight: -300
 
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
@@ -42,8 +39,10 @@ enableMissingTranslationPlaceholders: true
 languages:
   en:
     weight: 1
+    languageName: Engline
   fr:
     weight: 2
+    languageName: Français
     heading: Tutoriels
     tagline: >
       Follow along with one of our continuous
@@ -60,6 +59,7 @@ languages:
         - name: "Projets"
   es:
     weight: 3
+    languageName: Español
     menu:
       main:
         - name: "Documentación"
@@ -69,6 +69,7 @@ languages:
         - name: "Proyectos"
   pt:
     weight: 4
+    languageName: Português
     menu:
       main:
         - name: "Documentação"
@@ -78,6 +79,7 @@ languages:
         - name: "Projetos"
   zh-cn:
     weight: 5
+    languageName: 中文(简体)
     menu:
       main:
         - name: "文档"
@@ -92,11 +94,12 @@ languages:
         - name: "插件"
           url: "http://plugins.drone.io"
           weight: -600
-        - name: "项目"
-          url: "https://github.com/drone/drone"
-          weight: -500
+        # - name: "项目"
+        #   url: "https://github.com/drone/drone"
+        #   weight: -500
   zh-tw:
     weight: 6
+    languageName: 中文(台灣)
     menu:
       main:
         - name: "文件"
@@ -111,11 +114,12 @@ languages:
         - name: "外掛"
           url: "http://plugins.drone.io"
           weight: -600
-        - name: "專案"
-          url: "https://github.com/drone/drone"
-          weight: -500
+        # - name: "專案"
+        #   url: "https://github.com/drone/drone"
+        #   weight: -500
   ja:
     weight: 7
+    languageName: 日本語
     menu:
       main:
         - name: "ドキュメント"
@@ -125,6 +129,7 @@ languages:
         - name: "プロジェクト"
   ru:
     weight: 8
+    languageName: pусский
     menu:
       main:
         - name: "Документация"
@@ -140,6 +145,7 @@ languages:
         # - name: "Проекты"
   hu:
     weight: 9
+    languageName: magyar
     menu:
       main:
         - name: "Dokumentációt"

@@ -29,7 +29,7 @@ menu:
       url: "http://readme.drone.io/questions"
       weight: -500
     - name: "Plugins"
-      url: "http://readme.drone.io/0.5/plugins"
+      url: "http://plugins.drone.io"
       weight: -300
 
 defaultContentLanguage: en

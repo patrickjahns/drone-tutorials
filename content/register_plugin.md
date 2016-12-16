@@ -6,11 +6,11 @@ labels: [ "tutorial" ]
 author: bradrydzewski
 ---
 
-The plugin index is a [hugo](https://github.com/spf13/hugo) website that is statically generated. This means registering your plugin simply requires adding your documentation to the [plugin index](http://plugins.drone.io) repository.
+The plugin index is a [hugo](https://github.com/spf13/hugo) website that is statically generated. This means registering your plugin simply requires adding your documentation to the [plugin index](http://plugins.drone.io) repository. Fork the repository to get started.
 
 # Markdown File
 
-The plugin documentation should be added to `content/<repository>/index.md`. The repository should be all lowercase. You can copy / paste and modify existing documentation, or optionally use the hugo command line utility to create your documentation from a template.
+The plugin documentation should be added to `content/<repository>/index.md`. The repository name should be all lowercase. You can copy / paste and modify existing documentation, or optionally use the hugo command line utility to create your documentation from a template.
 
 ```nohighlight
 hugo new -f yaml <repo>/index.md

@@ -39,7 +39,7 @@ hugo new -f yaml <repo>/index.hu.md
 
 # Markdown Front Matter
 
-The markdown file includes a yaml frontmatter section that defines plugin meta-data. The following fields are required, unless the description states otherwise.
+The markdown file includes a yaml front matter section that defines plugin meta-data. The following fields are required, unless the description states otherwise.
 
 ```yaml
 ---
@@ -88,7 +88,7 @@ pipeline:
     target: /target/location
 ```
 
-It should then include examples that add optional, but frequently used fields. We recommend displaying these examples is diff format to help illustrate the progression of configuration changes. For example:
+It should then include examples that add optional, but frequently used fields. We recommend displaying these examples in diff format to help illustrate the progression of configuration changes. For example:
 
 ```diff
 pipeline:

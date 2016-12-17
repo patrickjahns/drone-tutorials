@@ -6,153 +6,166 @@ labels: [ "tutorial" ]
 author: bradrydzewski
 ---
 
-The plugin index is a [hugo](https://github.com/spf13/hugo) website that is statically generated. This means registering your plugin simply requires adding your documentation to the [plugin index](http://plugins.drone.io) repository. Fork the repository to get started.
+This tutorial provides an overview for registering your plugin with the [plugin index](http://plugins.drone.io). The plugin index will automatically generate and refresh your documentation from a `manifest.yaml` file in the root of your GitHub repository.
 
-# Markdown File
+Example `maifest.yaml` file:
 
-The plugin documentation should be added to `content/<repository>/index.md`. The repository name should be all lowercase. You can copy / paste and modify existing documentation, or optionally use the hugo command line utility to create your documentation from a template.
-
-```nohighlight
-hugo new -f yaml <repo>/index.md
 ```
+version: 1
 
-This is an example command:
-
-```nohighlight
-hugo new -f yaml drone-plugin/drone-docker/index.md
-```
-
-Please consider providing translated copies of your documentation if you natively speak one of the below languages. Please do not use Google Translate.
-
-```nohighlight
-hugo new -f yaml <repo>/index.fr.md
-hugo new -f yaml <repo>/index.es.md
-hugo new -f yaml <repo>/index.pt.md
-hugo new -f yaml <repo>/index.it.md
-hugo new -f yaml <repo>/index.zh-ch.md
-hugo new -f yaml <repo>/index.zh-tw.md
-hugo new -f yaml <repo>/index.ja.md
-hugo new -f yaml <repo>/index.ko.md
-hugo new -f yaml <repo>/index.ru.md
-hugo new -f yaml <repo>/index.hu.md
-```
-
-# Markdown Front Matter
-
-The markdown file includes a yaml front matter section that defines plugin meta-data. The following fields are required, unless the description states otherwise.
-
-```yaml
----
-date: 2016-01-01T00:00:00+00:00
-title: Amazon S3
-author: drone-plugins
-tags: [ amazon, aws, s3, storage ]
-repo: drone-plugins/drone-s3
+name: Amazon S3
 logo: amazon_s3.svg
+tags: [ aws, amazon, s3 ]
+license: MIT
+author: bradyrdzewski
 image: plugins/s3
----
+
+description: >
+  The S3 plugin uploads files and build artifacts to your S3 bucket.
+
+settings:
+  - name: endpoint:
+    desc: custom endpoint URL
+  - name: access_key:
+    desc: amazon key
+    env: AWS_ACCESS_KEY_ID
+  - name: secret_key:
+    desc: amazon secret key
+    env: AWS_SECRET_ACCESS_KEY
+
+example: |
+  pipeline:
+    s3:
+      image: plugins/s3
+      bucket: my-bucket-name
+      access_key: a50d28f4dd477bc184fbd10b376de753
+      secret_key: bc5785d3ece6a9cdefa42eb99b58986f9095ff1c
+      source: public/**/*
+      target: /target/location
+
+examples:
+  - desc: Override the default acl and region:
+    code: >
+      pipeline:
+        s3:
+          image: plugins/s3
+          bucket: my-bucket-name
+      +   acl: public-read
+      +   region: us-east-1
+          source: public/**/*
+          target: /target/location
+
+  - desc: Override the default acl and region:
+    code: >
+      pipeline:
+        s3:
+          image: plugins/s3
+          bucket: my-bucket-name
+          source: public/**/*
+          target: /target/location
+      +   strip_prefix: public/
 ```
 
-date
-: date the plugin was created or updated
-
-title
-: name of your plugin
-
-author
-: github username of plugin author
-
-repo
-: github repository name
-
-image
-: docker repository name
-
-tags
-: used to categorize your project.
-
-logo
-: name of logo to display (optional)
-
-
-# Documentation Guidelines
-
-The plugin documentation should be succinct and include example configurations. The documentation should first include an example configuration with the minimum set of required fields. For example:
-
-```
-pipeline:
-  s3:
-    image: plugins/s3
-    bucket: my-bucket-name
-    source: public/**/*
-    target: /target/location
-```
-
-It should then include examples that add optional, but frequently used fields. We recommend displaying these examples in diff format to help illustrate the progression of configuration changes. For example:
+The `name` attribute provides a user-friendly name for your plugin.
 
 ```diff
-pipeline:
-  s3:
-    image: plugins/s3
-    bucket: my-bucket-name
-+   acl: public-read
-+   region: us-east-1
-    source: public/**/*
-    target: /target/location
+name: Amazon S3
 ```
 
-It should __not__ duplicate information from the core documentation. It should also avoid linking to other documentation. This is because the documentation is frequently changing and we want to minimize the potential for broken links.
-
-For example, do not re-document plugin conditions:
+The `logo` attribute is an image in the [repository](https://github.com/drone/drone-plugin-index/tree/master/static/logos) used as the logo in the user interface. If a suitable svg logo does not existing in the repository, please send a pull request.
 
 ```diff
-pipeline:
-  s3:
-    image: plugins/s3
-    bucket: my-bucket-name
-    source: public/**/*
-    target: /target/location
--   when:
--     branch: master
+logo: amazon_s3.svg
 ```
 
-# Documenting Parameters
+The `tags` attribute are a list of labels used to categorize plugins:
 
-The markdown documentation should include a section that defines a list of available configuration parameters. This list must use markdown definitions. For example:
+```diff
+tags: [ aws, amazon, s3 ]
+```
+
+The `license` attribute is the spdx license identifier:
+
+```diff
+license: MIT
+```
+
+The `image` attribute is name of your docker image:
+
+```diff
+image: plugins/s3
+```
+
+
+The `description` attribute should provide a one-sentence description of your plugin.
 
 ```nohighlight
-# Parameter Reference
-
-endpoint
-: custom endpoint URL (optional, to use a S3 compatible non-Amazon service)
-
-access_key
-: amazon key (optional)
-
-secret_key
-: amazon secret key (optional)
-
-bucket
-: bucket name
-
-region
-: bucket region (`us-east-1`, `eu-west-1`, etc)
+description: |
+  The S3 plugin uploads files and build artifacts to your S3 bucket.
 ```
 
-# Documenting Secrets
-
-The markdown documentation should include a section that defines a list of available secret environment variables. This list must use markdown definitions. For example:
+The `example` attribute should provide a basic example configuration using the minimum set of required parameters. Avoid including non-essential parameters in this primary example.
 
 ```nohighlight
-# Secret Reference
-
-AWS_ACCESS_KEY_ID
-: amazon key
-
-AWS_SECRET_ACCESS_KEY
-: amazon secret key
+example: |
+  pipeline:
+    s3:
+      image: plugins/s3
+      bucket: my-bucket-name
+      access_key: a50d28f4dd477bc184fbd10b376de753
+      secret_key: bc5785d3ece6a9cdefa42eb99b58986f9095ff1c
+      source: public/**/*
+      target: /target/location
 ```
 
-# Including a Logo
+The `examples` block should be used to provide additional examples, where applicable. These example code blocks are rendered in diff format to help illustrate the progression of configuration changes.
 
-It is recommended, but not required, that you include an official logo for your plugin. The logo must be in svg format and placed in the `static/logos` folder.
+```nohighlight
+examples:
+  - desc: Override the default acl and region:
+    code: >
+      pipeline:
+        s3:
+          image: plugins/s3
+          bucket: my-bucket-name
+          acl: public-read
+      +   region: us-east-1
+          source: public/**/*
+          target: /target/location
+
+  - desc: Override the default acl and region:
+    code: >
+      pipeline:
+        s3:
+          image: plugins/s3
+          bucket: my-bucket-name
+          source: public/**/*
+          target: /target/location
+      +   strip_prefix: public/
+```
+
+The settings block in the manifest should define all plugin yaml attributes:
+
+```nohighlight
+settings:
+  - name: endpoint:
+    desc: custom endpoint URL
+  - name: access_key:
+    desc: amazon key
+  - name: secret_key:
+    desc: amazon secret key
+```
+
+The settings block should include secret variable names, where applicable:
+
+```diff
+settings:
+  - name: endpoint:
+    desc: custom endpoint URL
+  - name: access_key:
+    desc: amazon key
++   env: AWS_ACCESS_KEY_ID
+  - name: secret_key:
+    desc: amazon secret key
++   env: AWS_SECRET_ACCESS_KEY
+```

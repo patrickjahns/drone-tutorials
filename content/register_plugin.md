@@ -4,6 +4,7 @@ title: How to register your plugin
 tags: [ "plugins" ]
 labels: [ "tutorial" ]
 author: bradrydzewski
+slug: register-your-plugin
 ---
 
 This tutorial provides an overview for registering your plugin with the [plugin index](http://plugins.drone.io). The plugin index will automatically generate and refresh your documentation from a `manifest.yaml` file in the root of your GitHub repository.
